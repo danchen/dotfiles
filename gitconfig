@@ -1,0 +1,10 @@
+[color]
+	ui = auto
+[fetch]
+	prune = true
+[include]
+	path = ~/.gitconfig.local
+[push]
+	default = simple
+[rebase]
+	autosquash = true
