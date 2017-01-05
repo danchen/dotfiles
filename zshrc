@@ -1,7 +1,7 @@
 # dependencies
 # $ brew tap jhawthorn/fzy
 # $ brew tap homebrew/command-not-found
-# $ brew install autojump coreutils fzy hub repo terminal-notifier tmux
+# $ brew install autojump coreutils fzy grc hub repo terminal-notifier tmux
 # rvm
 # $ curl -sSL https://get.rvm.io | bash -s stable
 
@@ -41,7 +41,8 @@ zplug "plugins/singlechar", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/systemadmin", from:oh-my-zsh
 zplug "plugins/textmate", from:oh-my-zsh
-export ZSH_TMUX_AUTOSTART=true && export ZSH_TMUX_ITERM2=true && zplug "plugins/tmux", from:oh-my-zsh
+# export ZSH_TMUX_AUTOSTART=true && export ZSH_TMUX_ITERM2=true
+zplug "plugins/tmux", from:oh-my-zsh
 zplug "plugins/vagrant", from:oh-my-zsh
 zplug "plugins/zsh_reload", from:oh-my-zsh
 zplug "plugins/zsh-navigation-tools", from:oh-my-zsh
