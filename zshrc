@@ -1,10 +1,3 @@
-# dependencies
-# $ brew tap jhawthorn/fzy
-# $ brew tap homebrew/command-not-found
-# $ brew install autojump coreutils fzy grc hub repo terminal-notifier tmux
-# rvm
-# $ curl -sSL https://get.rvm.io | bash -s stable
-
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 export ZPLUG_HOME=/usr/local/opt/zplug
