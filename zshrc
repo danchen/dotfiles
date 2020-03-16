@@ -1,9 +1,9 @@
 # dependencies
-# $ brew tap caskroom/fonts
+# $ brew tap homebrew/cask-fonts
 # $ brew cask install font-hack-nerd-font
 # $ brew tap jhawthorn/fzy
 # $ brew tap homebrew/command-not-found
-# $ brew install autojump coreutils fzy grc hub repo terminal-notifier tmux
+# $ brew install autojump coreutils fzy grc hub repo terminal-notifier tmux zplug
 # rvm
 # $ curl -sSL https://get.rvm.io | bash -s stable
 
@@ -11,11 +11,12 @@ export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
+export EDITOR="/usr/local/bin/mate -w"
 
 # prompt
 POWERLEVEL9K_MODE="nerdfont-complete"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
-#POWERLEVEL9K_SHORTEN_STRATEGY="truncate_right"
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_to_first_and_last"
 
 POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=false
 
@@ -41,19 +42,17 @@ POWERLEVEL9K_STATUS_VERBOSE=true
 POWERLEVEL9K_STATUS_CROSS=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
-#POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{cyan}\u256D\u2500%f"
-#POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%F{073}\uF460%F{109}\uF460%f "
-#POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="╭─%f"
-#POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰─%F{008}\uF460 %f"
-#POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-#POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{008}> %f"
+# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{cyan}\u256D\u2500%f"
+# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%F{073}\uF460%F{109}\uF460%f "
+# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="╭─%f"
+# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰─%F{008}\uF460 %f"
+# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{008}> %f"
 
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="╭"
-#POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="❱ "
+# POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="❱ "
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰\uF460 "
 
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh root_indicator dir_writable dir )
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator context dir_writable dir vcs)
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context dir_writable dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time background_jobs status time ssh)
 
@@ -115,7 +114,7 @@ POWERLEVEL9K_ROOT_INDICATOR_FOREGROUND="magenta"
 POWERLEVEL9K_ROOT_INDICATOR_BACKGROUND="$DEFAULT_BACKGROUND"
 POWERLEVEL9K_ROOT_INDICATOR_BACKGROUND="$(( $DEFAULT_BACKGROUND + 2 ))"
 POWERLEVEL9K_ROOT_INDICATOR_BACKGROUND="$(( $DEFAULT_BACKGROUND - 2 ))"
-#POWERLEVEL9K_ROOT_ICON=$'\uFF03' # ＃
+# POWERLEVEL9K_ROOT_ICON=$'\uFF03' # ＃
 POWERLEVEL9K_ROOT_ICON=$'\uF198'  # 
 
 POWERLEVEL9K_SSH_FOREGROUND="$DEFAULT_FOREGROUND"
@@ -201,7 +200,6 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:2
 
 # programming plugins
-zplug "johnhamelink/rvm-zsh"
 export NVM_LAZY_LOAD=true && zplug "lukechilds/zsh-nvm"
 zplug "lukechilds/zsh-better-npm-completion"
 zplug "plugins/gem", from:oh-my-zsh
@@ -235,8 +233,8 @@ zplug load
 # settings
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 
-# aliases
-alias zconfig="mate ~/.zshrc"
+# iterm2 integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
