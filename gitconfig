@@ -8,3 +8,6 @@
 	default = simple
 [rebase]
 	autosquash = true
+[user]
+	name = Daniel Chen
+	email = danchen@yahoo.com
